@@ -1,0 +1,45 @@
+/*
+ *  $Id:DmpAlgBgoDyCoe.h, 2014-09-24 20:02:20 DAMPE $
+ *  Author(s):
+ *    Dong Jianing(jndong@mail.ustc.edu.cn)
+*/ 
+
+#ifndef DmpAlgCalBgoDyCoe_H
+#define DmpAlgCalBgoDyCoe_H
+
+#include "DmpVAlg.h"
+
+class DmpEvtHeader;
+class DmpEvtBgoRaw;
+class DmpEvtBgoDyCoe;
+class TH2F;
+
+class DmpAlgBgoDyCoe : public DmpVAlg{
+/*  
+ *  DmpAlgBgoDyCoe
+ *
+ */
+public:
+  DmpAlgBgoDyCoe();
+  ~DmpAlgBgoDyCoe();
+
+  //void Set(const std::string &type,const std::string &value);
+  // if you need to set some options for your algorithm at run time. Overload Set()
+  bool Initialize();
+  bool ProcessThisEvent();    // only for algorithm
+  bool Finalize();
+
+private:
+  DmpEvtHeader          *fEvtHeader;
+  DmpEvtBgoRaw          *fBgoRaw;
+  DmpEvtBgoDyCoe        *fBgoDyCoe;
+  std::map<short,TH2F*>  fDy5vsDy2Hist;
+  std::map<short,TH2F*>  fDy8vsDy5Hist;
+  std::map<short,short>  FitRangeDy8_l;
+  std::map<short,short>  FitRangeDy8_h;
+  std::map<short,short>  FitRangeDy5_l;
+  std::map<short,short>  FitRangeDy5_h;
+
+};
+
+#endif
