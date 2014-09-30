@@ -1,0 +1,36 @@
+#! /usr/bin/python
+'''
+ *  $Id: JobOpt_DmpCalBgoDyCoe, 2014-09-26 15:39:29 DAMPE $
+ *  Author(s):
+ *    Jianing Dong (jndong@mail.ustc.edu.cn) 26/09/2014
+'''
+
+#-------------------------------------------------------------------
+import os
+import DMPSW                    # Load DAMPE software
+import libDmpBgoDyCoe as DmpBgoDyCoe
+
+#-------------------------------------------------------------------
+# Global setting
+DMPSW.Core.Set("FromEvent","10")
+#DMPSW.Core.Set("StartTime","20130101-0000")     # if NOT set, start from launch time
+#DMPSW.Core.Set("StopTime","20160101-0000")      # if NOT set, end at 2113.01.01
+#DMPSW.Core.Set("LogLevel","Warning")      # Value = {Error | Warning | Info | Debug}. If NOT set, will use Info.
+
+#-------------------------------------------------------------------
+# RootIOSvc options
+DMPSW.RootIOSvc.Set("Input/FileName","A2data20140912.root")
+#DMPSW.RootIOSvc.Set("Output/FileName","./DmpCalBgoMip.root")
+DMPSW.RootIOSvc.Set("Output/WriteList","Calibration/Bgo/DyCoe")  # split by ;
+
+#-------------------------------------------------------------------
+# Creat user's service or algorithm
+calBgoDyCoe = DmpBgoDyCoe.DmpAlgBgoDyCoe()
+DMPSW.AlgMgr.Append(calBgoDyCoe)
+
+#-------------------------------------------------------------------
+# Run job
+DMPSW.Core.Initialize()
+DMPSW.Core.Run()
+DMPSW.Core.Finalize()
+
