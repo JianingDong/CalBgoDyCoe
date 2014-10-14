@@ -12,7 +12,7 @@ import libDmpBgoDyCoe as DmpBgoDyCoe
 
 #-------------------------------------------------------------------
 # Global setting
-DMPSW.Core.Set("FromEvent","10")
+#DMPSW.Core.Set("FromEvent","10")
 #DMPSW.Core.Set("StartTime","20130101-0000")     # if NOT set, start from launch time
 #DMPSW.Core.Set("StopTime","20160101-0000")      # if NOT set, end at 2113.01.01
 #DMPSW.Core.Set("LogLevel","Warning")      # Value = {Error | Warning | Info | Debug}. If NOT set, will use Info.
@@ -20,8 +20,8 @@ DMPSW.Core.Set("FromEvent","10")
 #-------------------------------------------------------------------
 # RootIOSvc options
 DMPSW.RootIOSvc.Set("Input/FileName","A2data20140912.root")
-#DMPSW.RootIOSvc.Set("Output/FileName","./DmpCalBgoMip.root")
-DMPSW.RootIOSvc.Set("Output/WriteList","Calibration/Bgo/DyCoe")  # split by ;
+DMPSW.RootIOSvc.Set("Output/FileName","./DyCoe/DmpCalBgoDyCoe.root")
+DMPSW.RootIOSvc.Set("Output/WriteList","Calibration/Bgo")  # split by ;
 
 #-------------------------------------------------------------------
 # Creat user's service or algorithm

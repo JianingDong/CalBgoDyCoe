@@ -8,6 +8,7 @@
 #define DmpAlgCalBgoDyCoe_H
 
 #include "DmpVAlg.h"
+#include <map>
 
 class DmpEvtHeader;
 class DmpEvtBgoRaw;
@@ -25,6 +26,7 @@ public:
 
   //void Set(const std::string &type,const std::string &value);
   // if you need to set some options for your algorithm at run time. Overload Set()
+  bool Reset();
   bool Initialize();
   bool ProcessThisEvent();    // only for algorithm
   bool Finalize();
@@ -40,6 +42,9 @@ private:
   std::map<short,short>  FitRangeDy5_l;
   std::map<short,short>  FitRangeDy5_h;
 
+  double adc_dy2[14][24][2];
+  double adc_dy5[14][24][2];
+  double adc_dy8[14][24][2];
 };
 
 #endif

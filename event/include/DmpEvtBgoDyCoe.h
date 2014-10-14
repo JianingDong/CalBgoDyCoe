@@ -28,11 +28,19 @@ public:
   int StartTime;               //the time of the first event used to cal . DyCoe
   int StopTime;
  // std::vector<short>   GlobalDynodeID;
-  std::vector<short>   GlobalPMTID;
-  std::vector<float>   Inc_Dy5vsDy2;
-  std::vector<float>   Inc_Dy8vsDy5;
-  std::vector<float>   Slp_Dy5vsDy2;
-  std::vector<float>   Slp_Dy8vsDy5;
+  std::vector<short>    GlobalPMTID;
+  std::vector<double>   Inc_Dy5vsDy2;
+  std::vector<double>   Inc_Dy8vsDy5;
+  std::vector<double>   Slp_Dy5vsDy2;
+  std::vector<double>   Slp_Dy8vsDy5;
+
+  std::vector<double>   Inc_Err_Dy5vsDy2;
+  std::vector<double>   Inc_Err_Dy8vsDy5;
+  std::vector<double>   Slp_Err_Dy5vsDy2;
+  std::vector<double>   Slp_Err_Dy8vsDy5;
+
+  std::vector<double>   ChiS_Dy5vsDy2;
+  std::vector<double>   ChiS_Dy8vsDy5;
 
   ClassDef(DmpEvtBgoDyCoe,1)
 

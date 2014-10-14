@@ -1,13 +1,14 @@
 /*
  *  $Id:DmpAlgBgoDyCoe.h, 2014-09-24 20:02:20 DAMPE $
  *  Author(s):
- *    Dong Jianing(jndong@mail.ustc.edu.cn)
+ *    Jianing Dong (jndong@mail.ustc.edu.cn)24/09/2014
 */ 
 
 #ifndef DmpAlgCalBgoDyCoe_H
 #define DmpAlgCalBgoDyCoe_H
 
 #include "DmpVAlg.h"
+#include <map>
 
 class DmpEvtHeader;
 class DmpEvtBgoRaw;
@@ -40,6 +41,9 @@ private:
   std::map<short,short>  FitRangeDy5_l;
   std::map<short,short>  FitRangeDy5_h;
 
+  double adc_dy2[14][24][2];
+  double adc_dy5[14][24][2];
+  double adc_dy8[14][24][2];
 };
 
 #endif

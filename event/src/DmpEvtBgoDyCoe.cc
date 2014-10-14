@@ -25,6 +25,14 @@ DmpEvtBgoDyCoe::DmpEvtBgoDyCoe(const DmpEvtBgoDyCoe &r){
     Slp_Dy5vsDy2.push_back(r.Slp_Dy5vsDy2[i]);
     Inc_Dy8vsDy5.push_back(r.Inc_Dy8vsDy5[i]);
     Slp_Dy8vsDy5.push_back(r.Slp_Dy8vsDy5[i]);
+
+    Inc_Err_Dy5vsDy2.push_back(r.Inc_Err_Dy5vsDy2[i]);
+    Slp_Err_Dy5vsDy2.push_back(r.Slp_Err_Dy5vsDy2[i]);
+    Inc_Err_Dy8vsDy5.push_back(r.Inc_Err_Dy8vsDy5[i]);
+    Slp_Err_Dy8vsDy5.push_back(r.Slp_Err_Dy8vsDy5[i]);
+
+    ChiS_Dy5vsDy2.push_back(r.ChiS_Dy5vsDy2[i]);
+    ChiS_Dy8vsDy5.push_back(r.ChiS_Dy8vsDy5[i]);
   }
 }
 
@@ -40,8 +48,16 @@ DmpEvtBgoDyCoe::DmpEvtBgoDyCoe(const DmpEvtBgoDyCoe *&r){
     Slp_Dy5vsDy2.push_back(r->Slp_Dy5vsDy2[i]);
     Inc_Dy8vsDy5.push_back(r->Inc_Dy8vsDy5[i]);
     Slp_Dy8vsDy5.push_back(r->Slp_Dy8vsDy5[i]);
-  }
-}
+
+    Inc_Err_Dy5vsDy2.push_back(r->Inc_Err_Dy5vsDy2[i]);
+    Slp_Err_Dy5vsDy2.push_back(r->Slp_Err_Dy5vsDy2[i]);
+    Inc_Err_Dy8vsDy5.push_back(r->Inc_Err_Dy8vsDy5[i]);
+    Slp_Err_Dy8vsDy5.push_back(r->Slp_Err_Dy8vsDy5[i]);
+
+    ChiS_Dy5vsDy2.push_back(r->ChiS_Dy5vsDy2[i]);
+    ChiS_Dy8vsDy5.push_back(r->ChiS_Dy8vsDy5[i]);
+   }
+} 
 
 DmpEvtBgoDyCoe::~DmpEvtBgoDyCoe()
 {
@@ -59,4 +75,12 @@ void DmpEvtBgoDyCoe::Reset()
   Slp_Dy5vsDy2.clear();
   Inc_Dy8vsDy5.clear();
   Slp_Dy8vsDy5.clear();
+
+  Inc_Err_Dy5vsDy2.clear();
+  Slp_Err_Dy5vsDy2.clear();
+  Inc_Err_Dy8vsDy5.clear();
+  Slp_Err_Dy8vsDy5.clear();
+
+  ChiS_Dy5vsDy2.clear();
+  ChiS_Dy8vsDy5.clear();
 }
