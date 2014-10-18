@@ -51,9 +51,9 @@ DmpAlgBgoDyCoe::~DmpAlgBgoDyCoe(){
 bool DmpAlgBgoDyCoe::Initialize(){
   //read input data
   //gDataBuffer->LinkRootFile("Event/Rdc/EventHeader",fEvtHeader);
-  fEvtHeader = dynamic_cast<DmpEvtHeader*>(gDataBuffer->ReadObject("Event/Rdc/EventHeader"));
+  fEvtHeader = dynamic_cast<DmpEvtHeader*>(gDataBuffer->ReadObject("Event/Cutped/EventHeader"));
   //gDataBuffer->LinkRootFile("Event/Rdc/Bgo",fBgoRaw);
-  fBgoRaw = dynamic_cast<DmpEvtBgoRaw*>(gDataBuffer->ReadObject("Event/Rdc/Bgo"));
+  fBgoRaw = dynamic_cast<DmpEvtBgoRaw*>(gDataBuffer->ReadObject("Event/Cutped/Bgo"));
   //create output data holder
   fBgoDyCoe = new DmpEvtBgoDyCoe();
   gDataBuffer->RegisterObject("Calibration/Bgo/DyCoe",fBgoDyCoe,"DmpEvtBgoDyCoe");
